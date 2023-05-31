@@ -1,19 +1,18 @@
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
-import Nav from './components/nav.js';
-import Form from './components/form.js';
-import Reminder from './components/reminder.js';
-import Carousel from './components/carousel.js';
-import Footer from './components/footer.js';
+import Home from './components/HomeFolder/Home.js';
+import PassengerForm from './components/PagesFolder/passengerForm.js';
 
 
 function App() {
   return (
     <div>
-      <Nav/>
-      <Form/>
-      <Reminder/>
-      <Carousel/>
-      <Footer/>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/passengerForm' element={<PassengerForm/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
